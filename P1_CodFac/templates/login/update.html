@@ -1,0 +1,8 @@
+{% extends 'empleados/index.html' %}
+{% block content %}
+REGISTER
+<form action="/updateUser/{{usuario.id}}" method="POST">
+    {% from 'macros/inputs.html' import input_update %}
+    {{ input_update(usuario) }}
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'empleados/index.html'%}
+{% block content %}
+LISTA
+{% with messages = get_flashed_messages() %}  
+    {% if messages %}
+        {% for mensaje in messages %}
+            <div class="mensaje">
+                {{ mensaje }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+{% for item in listado %}
+<div>
+    <h2>Usuario: {{item.username}}</h2>
+    <p>Email: {{item.email}}</p>
+    <p>Date: {{item.create_date}}</p>
+    <a href="{{url_for('login.delete',id=item.id)}}">DELETE</a>
+    <a href="{{url_for('login.update',id=item.id)}}">UPDATE</a>
+</div>
+{% endfor %}
+{% endblock %}

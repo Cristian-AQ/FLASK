@@ -1,0 +1,17 @@
+{% extends 'empleados/index.html' %}
+{% block content %}
+REGISTER
+{% with messages = get_flashed_messages() %}  
+    {% if messages %}
+        {% for mensaje in messages %}
+        <div class="mensaje">
+            {{ mensaje }}
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}   
+<form action="/registerUser" method="POST">
+    {% from 'macros/inputs.html' import input_register %}
+    {{ input_register() }}
+</form>
+{% endblock %}

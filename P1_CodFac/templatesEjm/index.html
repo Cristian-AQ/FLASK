@@ -1,0 +1,7 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    {% for num in list %}
+    {% from 'base/_macro.html' import lista %}
+        {{ lista(num) }}
+    {% endfor %}
+{% endblock %}
