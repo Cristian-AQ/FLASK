@@ -1,4 +1,4 @@
-from email.mime import image
+# from email.mime import image
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config.config import DevelopmentConfig
