@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block content %}
+    {% if vercapitulos %}
+        {% for capitulo in vercapitulos %}
+            <div style="padding: 20px;">
+                <a href="/view/{{ capitulo.namefolder }}/{{ capitulo.namecapitulo }}">{{ capitulo.namecapitulo }}</a>
+            </div>
+            {% endfor %}
+    {% endif %}
+{% endblock %}

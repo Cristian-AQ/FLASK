@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block content %}
+    {% if cap %}
+        <div>
+            <ul>
+                {% for x in cap %}
+                <li>{{ x.namecapitulo }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p> NO HAY CAPITULOS</p>
+    {% endif %}
+    <form action="/capitulo/{{ id }}" method="POST" enctype="multipart/form-data">
+        <input type="text" name="namecapitulo" placeholder="namecapitulo">
+        <input type="file" name="imgcap" multiple>
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock %}

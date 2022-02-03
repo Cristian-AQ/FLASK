@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block content %}
+    {% if folderUser %}
+        {% for portada in folderUser %}
+            <div style="padding: 20px;">
+                <div>
+                    <img src="/{{path}}/{{portada.namefolder}}/{{portada.imagefile}}" alt="{{portada.namefolder}}">
+                </div>
+                <a href="/view/{{ portada.namefolder }}">Ver Capitulos</a>
+            </div>
+            {% endfor %}
+    {% endif %}
+{% endblock %}

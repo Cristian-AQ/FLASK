@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block content %}
+    {% if imagecap %}
+        <div><a href="{{url_for('index')}}">Home</a><span> / </span><a href="/view/{{info.namefolder}}">{{info.namefolder}}</a><span> / {{info.namecapitulo}} </span></div>
+        {% for image in imagecap %}
+            <div style="padding: 20px;">
+                <div>
+                    <img src="/{{path}}/{{info.namefolder}}/{{info.namecapitulo}}/{{image.imagecapname}}" alt="{{image.imagecapname}}">
+                </div>
+            </div>
+        {% endfor %}
+        <div><a href="{{url_for('index')}}">Home</a><span> / </span><a href="/view/{{info.namefolder}}">{{info.namefolder}}</a><span> / {{info.namecapitulo}} </span></div>
+        <br>
+        <a href="#">UPDATE</a>
+    {% endif %}
+{% endblock %}

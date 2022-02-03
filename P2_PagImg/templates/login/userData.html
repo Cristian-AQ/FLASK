@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block content %}
+{% if usuario %}
+DATOS USUARIO
+<div>
+    <p>Username: {{ usuario.username}}</p>
+    <p>email: {{ usuario.email}}</p>
+</div>
+<div>
+    <a href="{{ url_for('update')}}">UPDATE</a>
+</div>
+{% else %}
+<p>NO HAY DATA</p>
+{% endif %}
+{% endblock %}

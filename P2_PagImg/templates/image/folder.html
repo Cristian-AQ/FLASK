@@ -1,0 +1,7 @@
+{% extends 'index.html' %}
+{% block content %}
+<form action="/folder" method="post" enctype="multipart/form-data">
+    {% from 'macros/input.html' import input_img_folder %}
+    {{ input_img_folder() }}
+</form>
+{% endblock %}

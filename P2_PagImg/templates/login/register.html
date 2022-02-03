@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+{% block content %}
+REGISTER
+<form action="/register" method="post">
+    {% from 'macros/input.html' import input_register %}
+    {{ input_register() }}
+</form>
+{% endblock %}
